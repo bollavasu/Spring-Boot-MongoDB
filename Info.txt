@@ -1,0 +1,39 @@
+
+https://www.journaldev.com/18156/spring-boot-mongodb
+
+mvn clean install
+mvn spring-boot:run
+
+http://localhost:8102/user/create                (create a user)
+http://localhost:8102/user/                      (get all users)
+
+{
+  "name" : "Vasu",
+  "userSettings" : {
+  	"bike" : "RX100"
+  }
+}
+
+-----------------------------------------------------------------------------------------------------------
+
+1)download MongoDB from   https://www.mongodb.com/download-center/community
+  double click on that MSI file  (MongoDB will be installed as a windows service)
+
+2)open a command prompt in admin mode and type the following command to specify the DB path
+"C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
+
+3)go to C:\Program Files\MongoDB\Server\4.0\bin and double click on mongod.exe and execute the commands
+MongoDB commands : show dbs    (shows all DBs)
+                   db          (shows the currently connected DB)
+				   use DBNAME  (creates a new DB or connect to that DB)
+				   db.movie.insert({"name":"tutorials point"})              (inserts a document)
+				   db.dropDatabase()                                        (drops the currently connected DB)
+				   show collections
+				   db.user.find()             //db.collectionName.find()    (shows all documents in a collection)
+				   db.user.find().limit(2)                                  (shows first 2 documents)
+				   db.user.count()                                          (shows number of documents)
+				   show users
+				   show roles
+				   db.createCollection("collection1");                        (creates a collection)
+				   db.collection1.insert({field1: "value", field2: "value"})  (Insert a Document in a Collection)
+				   db.collection1.save({"_id": new ObjectId("5c6658702d3cd692d0117a6b"), field1: "value1", field2: "value2"});   (save/update doc)
